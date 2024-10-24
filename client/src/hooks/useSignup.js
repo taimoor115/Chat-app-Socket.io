@@ -5,7 +5,7 @@ import apiClient from "../utils/apiClient";
 
 const useSignup = () => {
   const [isLoading, setLoading] = useState(false);
-  const {setAuthUser} = useAuthContext()
+  const { setAuthUser } = useAuthContext();
   const signup = async ({
     fullname,
     username,
@@ -30,25 +30,21 @@ const useSignup = () => {
         username,
         password,
         confirmPassword,
-        gender
-
+        gender,
       });
 
-      
-      if(res.data.error) {
-          throw new Error(res.data.error)
-        }
-        console.log(res.data);
-        localStorage.setItem('chat-user', JSON.stringify(res.data))
-        setAuthUser(res.data)
-
-
+      if (res.data.error) {
+        throw new Error(res.data.error);
+      }
+      console.log(res.data);
+      localStorage.setItem("chat-user", JSON.stringify(res.data));
+      setAuthUser(res.data);
     } catch (error) {
       if (error) {
         toast.error(error.message);
       }
     } finally {
-        setLoading(false)
+      setLoading(false);
     }
   };
 
@@ -77,7 +73,7 @@ const handleInputError = ({
 
   if (password.length > 8) {
     toast.error("Password must be greater than 8 characters");
-    return false
+    return false;
   }
 
   return true;

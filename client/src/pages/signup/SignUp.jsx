@@ -34,15 +34,15 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
-      <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+    <div className="flex flex-col items-center justify-center mx-auto min-w-96">
+      <div className="w-full p-6 bg-gray-400 bg-opacity-0 rounded-lg shadow-md bg-clip-padding backdrop-filter backdrop-blur-lg">
         <h1 className="text-3xl font-semibold text-center text-gray-300">
           Sign Up <span className="text-blue-500"> ChatApp</span>
         </h1>
 
         <form onSubmit={handleSubmit}>
           <div>
-            <label className="label p-2">
+            <label className="p-2 label">
               <span className="text-base label-text">Full Name</span>
             </label>
             <input
@@ -50,13 +50,13 @@ const SignUp = () => {
               name="fullname"
               value={input.fullname}
               placeholder="Enter fullname"
-              className="w-full input input-bordered  h-10"
+              className="w-full h-10 input input-bordered"
               onChange={handleChange}
             />
           </div>
 
           <div>
-            <label className="label p-2 ">
+            <label className="p-2 label ">
               <span className="text-base label-text">Username</span>
             </label>
             <input
@@ -64,7 +64,7 @@ const SignUp = () => {
               name="username"
               value={input.username}
               placeholder="Enter username"
-              className="w-full input input-bordered h-10"
+              className="w-full h-10 input input-bordered"
               onChange={handleChange}
             />
           </div>
@@ -78,7 +78,7 @@ const SignUp = () => {
               name="password"
               value={input.password}
               placeholder="Enter Password"
-              className="w-full input input-bordered h-10"
+              className="w-full h-10 input input-bordered"
               onChange={handleChange}
             />
           </div>
@@ -92,7 +92,7 @@ const SignUp = () => {
               value={input.confirmPassword}
               name="confirmPassword"
               placeholder="Confirm Password"
-              className="w-full input input-bordered h-10"
+              className="w-full h-10 input input-bordered"
               onChange={handleChange}
             />
           </div>
@@ -104,13 +104,16 @@ const SignUp = () => {
 
           <Link
             to="/login"
-            className="text-sm hover:underline hover:text-blue-600 mt-2 inline-block"
+            className="inline-block mt-2 text-sm hover:underline hover:text-blue-600"
           >
             Already have an account?
           </Link>
 
           <div>
-            <button disabled={isLoading} className="btn btn-block btn-sm mt-2 border border-slate-700">
+            <button
+              disabled={isLoading}
+              className="mt-2 border btn btn-block btn-sm border-slate-700"
+            >
               {isLoading ? "Loading..." : "Sign up"}
             </button>
           </div>
